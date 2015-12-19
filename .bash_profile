@@ -1,8 +1,11 @@
 alias ls='ls -Glah'
 alias r='rails'
-alias e='bundle exec'
 alias i="irb --simple-prompt"
 alias gcc99="gcc -Wall -pedantic -ansi -std=c99"
+alias p="pry"
+alias emacs="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs -nw"
+alias e="/usr/local/Cellar/emacs/24.5/bin/emacsclient -n"
+alias tailf="tail -f"
 
 ps_scm_f() {
     local s=
@@ -67,8 +70,9 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+source ~/.profile
+
 # This file is sourced by bash for login shells.  The following line
 # runs your .bashrc and is recommended by the bash info pages.
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
